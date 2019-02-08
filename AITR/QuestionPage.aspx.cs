@@ -286,16 +286,16 @@ namespace AITR
                         if (reader.IsDBNull(nextQuestionColumnIndex))
                         {
                             SqlCommand insertUserCommand;
-                            insertUserCommand = new SqlCommand("INSERT INTO [User](userIpAddress,surveyRecordDate) VALUES('" + u.UserIpAddress + "','" + u.SurveyRecordDate + "')", connection);
-                            int rowsAffected1 = insertUserCommand.ExecuteNonQuery();
+                            insertUserCommand = new SqlCommand("INSERT INTO [User](userIpAddress,surveyRecordDate) VALUES('" + u.UserIpAddress + "','" + u.SurveyRecordDate + "');"+ " SELECT CAST(scope_identity() AS int);", connection);
+                            int ? userId = (int?)insertUserCommand.ExecuteScalar();
                             //if NULL, must be end of survey, so navigate to the thank you page
                             foreach (Answer a in answers)
                             {
                                 SqlCommand insertCommand;
                                 if(a.OptionId > 0)
-                                    insertCommand= new SqlCommand("INSERT INTO SurveyAnswer(answerText,questionId,optionId) VALUES('" + a.AnswerText + "','" + a.QuestionId + "'," + a.OptionId + ")", connection);
+                                    insertCommand= new SqlCommand("INSERT INTO SurveyAnswer(answerText,questionId,optionId,userId) VALUES('" + a.AnswerText + "','" + a.QuestionId + "','" + a.OptionId + "','"+userId+"')", connection);
                                 else
-                                    insertCommand = new SqlCommand("INSERT INTO SurveyAnswer(answerText,questionId) VALUES('" + a.AnswerText + "','" + a.QuestionId + "')", connection);
+                                    insertCommand = new SqlCommand("INSERT INTO SurveyAnswer(answerText,questionId,userId) VALUES('" + a.AnswerText + "','" + a.QuestionId + "','"+userId+"')", connection);
 
                                 int rowsAffected = insertCommand.ExecuteNonQuery();//for insert, update,delete
                             }
