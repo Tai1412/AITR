@@ -175,6 +175,7 @@ namespace AITR
                 CheckBoxQuestionControl checkBoxQuestion = (CheckBoxQuestionControl)QuestionPlaceHolder.FindControl("checkBoxQuestion");
                 if (checkBoxQuestion != null)
                 {
+                    Boolean hasNextQuestion = false;
                     //loop through checkboxes
                     foreach (ListItem item in checkBoxQuestion.QuestionCheckBoxList.Items)
                     {
@@ -193,9 +194,10 @@ namespace AITR
                             while(optionReader.Read())
                             {
                                 string nextQuestion = optionReader["nextQuestionId"].ToString();
-                                if (nextQuestion != "")
+                                if (nextQuestion != "" && hasNextQuestion==false)
                                 {
                                     extraQuestions.Add(Int32.Parse(optionReader["nextQuestionId"].ToString()));
+                                    hasNextQuestion = true;
                                 }
                             }
                             //store item.Value(optionID) in session
