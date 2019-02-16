@@ -30,7 +30,40 @@
         <div class="container w-50 h-auto  mt-5 mb-5 p-0" style="background-color:#ABABAB">
             <!-- Default form register -->
             <div class="text-center border border-light p-5">
+                <p>
+                    <h1>Search Page</h1>
+                    Search criteria
 
+                </p>
+                <p>
+                    <strong>Last Name</strong>
+                    <asp:TextBox  runat="server" MaxLength="20"></asp:TextBox>
+                </p>
+                <p>
+                    <strong>Given Name</strong>
+                    <asp:TextBox  runat="server" MaxLength="20"></asp:TextBox>
+                </p>
+                <p>
+                <strong>Banks</strong></p>
+                <p>
+                    <asp:CheckBoxList runat="server">
+                    </asp:CheckBoxList>
+                </p>
+                <p>
+                    <strong>Bank Services Used</strong></p>
+                <p>
+                    <asp:CheckBoxList runat="server">
+                    </asp:CheckBoxList>
+                </p>
+                <p>
+                    <asp:Button ID="SearchButton" runat="server" Text="Search" />
+                </p>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    <asp:GridView  runat="server">
+                    </asp:GridView>
+                </p>
             </div>
             <!-- Default form register -->
         </div>

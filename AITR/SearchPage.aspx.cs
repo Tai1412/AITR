@@ -11,9 +11,20 @@ namespace AITR
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["currentStaff"]!=null)
+            try
             {
-                currentStaff.Text = "Welcome " + Session["currentStaff"].ToString();
+                if (Session["currentStaff"] != null)
+                {
+                    currentStaff.Text = "Welcome " + Session["currentStaff"].ToString();
+                }
+                else
+                {
+                    Response.Redirect("~/Login");
+                }
+            }
+            catch(Exception ex)
+            {
+                Response.Write(ex.Message);
             }
         }   
 
