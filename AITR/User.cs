@@ -11,7 +11,6 @@ namespace AITR
         string lastName;
         string userIpAddress;
         string phoneNumber;
-        DateTime surveyRecordDate;
         int age;
 
         public string GivenName
@@ -56,17 +55,6 @@ namespace AITR
             set
             {
                 phoneNumber = value;
-            }
-        }
-        public DateTime SurveyRecordDate
-        {
-            get
-            {
-                return surveyRecordDate;
-            }
-            set
-            {
-                surveyRecordDate = value;
             }
         }
         public int Age
