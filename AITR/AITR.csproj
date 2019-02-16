@@ -253,6 +253,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="SearchPage.aspx" />
     <Content Include="Site.Master" />
     <Content Include="TextBoxQuestionControl.ascx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -447,6 +448,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchPage.aspx.cs">
+      <DependentUpon>SearchPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchPage.aspx.designer.cs">
+      <DependentUpon>SearchPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

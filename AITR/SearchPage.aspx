@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="AITR.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SearchPage.aspx.cs" Inherits="AITR.SearchPage" %>
 
 <!DOCTYPE html>
 <form id="form1" runat="server">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Login</title>
+<head runat="server">
+   <title>Search Page</title>
     <link href="Content/myStyle.css" rel="stylesheet" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"/>
@@ -14,33 +14,23 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/css/mdb.min.css" rel="stylesheet"/>
 </head>
 <body style="background-color:#99E394;">
-    <nav class="navbar top white" style="height:118px;margin:0px;padding:0px;">
+   <nav class="navbar top white" style="height:118px;margin:0px;padding:0px;">
         <div class="row justify-content-between w-100" style="margin:0px">
             <div class="col navbar-brand" style="font-family: 'Cherry Cream Soda', cursive; font-size:55px; color:#12A6C7; margin-left:64px;">
                 AITR
             </div>
             <div class="col justify-content-end" style="margin:0px" id="navbarTogglerDemo01">
-                <div class="row justify-content-end mr-2">
-                    <asp:Button class="btn btn-white black-text" style="width:95px;height:43px;padding:0px;margin-top:30px;" runat="server"  Text="Register" ID="s" OnClick="RegisterRedirect" />                
+                <div class="row justify-content-end mr-2">    
+                    <asp:Label ID="currentStaff" runat="server" Text=""></asp:Label>
+                    <asp:Button class="btn btn-white black-text" style="width:95px;height:43px;padding:0px;margin-top:30px;" runat="server" Text="Log Out" OnClick="logoutButton_Click" ID="logoutButton" />
                 </div>  
             </div>
         </div>
     </nav>
-    <div class="container w-50 h-auto  mt-5 mb-5 p-0" style="background-color:#ABABAB">
+        <div class="container w-50 h-auto  mt-5 mb-5 p-0" style="background-color:#ABABAB">
             <!-- Default form register -->
             <div class="text-center border border-light p-5">
 
-                <p class="text-left" style="font-size:20px;"><i class="fas fa-sign-in-alt green-text"></i>   Sign in your account </p>
-
-                <!-- E-mail -->
-                <asp:TextBox runat="server" type="text" id="staffIdTextBox" class="form-control mb-4" placeholder="Admin Id"></asp:TextBox>
-
-                <!-- Password -->
-                <asp:TextBox runat="server" type="password" id="staffPasswordTextBox" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock"></asp:TextBox>
-
-                <asp:Label ID="validate" runat="server" Font-Size="20px" style="color:red" ></asp:Label>  
-                <!-- Sign in button -->
-                 <asp:Button runat="server" Text="Sign In" class="btn btn-success my-4 btn-block" type="submit" style="font-size:18px;" ID="loginButton" OnClick="loginButton_Click" />
             </div>
             <!-- Default form register -->
         </div>
@@ -54,7 +44,6 @@
 
     </footer>
     <!-- Footer -->
-    
 </body>
 </html>
 </form>
