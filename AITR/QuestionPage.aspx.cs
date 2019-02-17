@@ -289,6 +289,7 @@ namespace AITR
                             SqlCommand insertUserCommand;
                             insertUserCommand = new SqlCommand("INSERT INTO [User](userIpAddress,surveyRecordDate) VALUES('" + u.UserIpAddress + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "');"+ " SELECT CAST(scope_identity() AS int);", connection);
                             int ? userId = (int?)insertUserCommand.ExecuteScalar();
+                            HttpContext.Current.Session["userId"] = userId;
                             //if NULL, must be end of survey, so navigate to the thank you page
                             foreach (Answer a in answers)
                             {
@@ -322,11 +323,6 @@ namespace AITR
         protected void LogInButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("Login.aspx");
-        }
-
-        protected void SignUpButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Register.aspx");
         }
         private static List<Answer> getListOfAnswersFromSession()
         {

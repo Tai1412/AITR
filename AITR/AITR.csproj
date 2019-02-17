@@ -219,6 +219,7 @@
     <Content Include="QuestionPage.aspx" />
     <Content Include="RadioBoxQuestionControl.ascx" />
     <Content Include="Register.aspx" />
+    <Content Include="RegisterCompletePage.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -448,6 +449,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterCompletePage.aspx.cs">
+      <DependentUpon>RegisterCompletePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterCompletePage.aspx.designer.cs">
+      <DependentUpon>RegisterCompletePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="SearchPage.aspx.cs">
       <DependentUpon>SearchPage.aspx</DependentUpon>

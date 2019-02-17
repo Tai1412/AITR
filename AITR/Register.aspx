@@ -20,8 +20,7 @@
                 AITR
             </div>
             <div class="col justify-content-end" style="margin:0px" id="navbarTogglerDemo01">
-                <div class="row justify-content-end mr-2">
-                    <asp:Button class="btn btn-link black-text" style="width:95px;height:43px;padding:0px;margin-top:30px;" runat="server"  Text="LOG IN" OnClick="LoginRedirect" />                
+                <div class="row justify-content-end mr-2">                
                 </div>  
             </div>
         </div>
@@ -31,40 +30,25 @@
             <div class="text-center border border-light p-5">
 
                 <p class="text-left" style="font-size:20px;"><i class="fas fa-user-plus green-text"></i>   Create Free Account </p>
-                <p class="text-left ml-2" style="font-size:20px;"> Already have an account? <a href="Login.aspx" style="color:#333ECF">Log in >></a></p>
-
-                <!-- E-mail -->
-                <input type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="User Name">
-
-                <!-- Password -->
-                <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-                <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                    At least 8 characters and 1 digit
-                </small>
 
                  <!-- DOB -->
-                <input type="text" id="defaultRegisterFormDOB" class="form-control" placeholder="Your Age" aria-describedby="defaultRegisterFormDOBHelpBlock">
-                <small id="defaultRegisterFormDOBHelpBlock" class="form-text text-muted mb-4">
-                </small>
+                <asp:TextBox runat="server" type="text" id="ageTextBox" class="form-control mb-4" placeholder="Your Age"></asp:TextBox>
 
                 <!-- Phone number -->
-                <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
-                <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-                    Optional - for two step authentication
-                </small>
+                <asp:TextBox runat="server" TextMode="Number" id="phoneNumberTextBox" class="form-control mb-4" placeholder="Your Phone Number"></asp:TextBox>
                 <div class="row mb-4">
                     <div class="col">
                         <!-- First name -->
-                        <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Given name">
+                        <asp:TextBox runat="server" type="text" id="giveNameTextBox" class="form-control mb-4" placeholder="Your Given Name"></asp:TextBox>
                     </div>
                     <div class="col">
                         <!-- Last name -->
-                        <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
+                        <asp:TextBox runat="server" type="text" id="lastNameTextBox" class="form-control mb-4" placeholder="Your Last Name"></asp:TextBox>
                     </div>
                 </div>
 
                 <!-- Sign up button -->
-                <button class="btn btn-success my-4 btn-block" type="submit" style="font-size:18px;">CREATE YOUR ACCOUNT</button>
+                <asp:Button class="btn btn-success my-4 btn-block"  style="font-size:18px;" ID="RegisterButton" runat="server" Text="Register" OnClick="RegisterButton_Click" />
             </div>
             <!-- Default form register -->
         </div>

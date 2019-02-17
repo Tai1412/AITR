@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="QuestionCompletePage.aspx.cs" Inherits="AITR.QuestionCompletePage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterCompletePage.aspx.cs" Inherits="AITR.RegisterCompletePage" %>
 
 <!DOCTYPE html>
 <form id="form1" runat="server">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Completed</title>
+    <title>Register Completed</title>
     <link href="Content/myStyle.css" rel="stylesheet" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"/>
@@ -29,8 +29,8 @@
     </header>
         <div class="container w-50 h-auto  mt-5 mb-5 p-0" style="font-size:30px;">
             <div class="text-center mt-5">
-                <h1 class="font-weight-bold">Thank you for you answer</h1>
-                <h2> Would you like to register <a href="Register.aspx" style="color:#333ECF">Register >></a></h2>
+                <h1 class="font-weight-bold">Register Completion</h1>
+                <h2> Survey and Register has been completed successful</h2>
             </div>
         </div>
     <footer class="page-footer fixed-bottom white lg" style="width:100%;height:76px; left: 0px;">

@@ -23,8 +23,7 @@
             </div>
             <div class="col justify-content-end" style="margin:0px" id="navbarTogglerDemo01">
                 <div class="row justify-content-end mr-2">
-                    <asp:Button class="btn btn-link black-text" style="width:95px;height:43px;padding:0px;margin-top:30px;" runat="server"  Text="LOG IN" OnClick="LogInButton_Click" />
-                    <asp:Button class="btn btn-white black-text" style="width:95px;height:43px;padding:0px;margin-top:30px;" runat="server" Text="SIGN UP" OnClick="SignUpButton_Click" />
+                    <asp:Button class="btn btn-link black-text" style="width:95px;height:43px;padding:0px;margin-top:30px;" runat="server"  Text="STAFF LOG IN" OnClick="LogInButton_Click" />
                 </div>
             </div>
         </div>
