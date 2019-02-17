@@ -11,7 +11,7 @@ namespace AITR
         string lastName;
         string userIpAddress;
         string phoneNumber;
-        int age;
+        string age;
 
         public string GivenName
         {
@@ -57,7 +57,7 @@ namespace AITR
                 phoneNumber = value;
             }
         }
-        public int Age
+        public string Age
         {
             get
             {

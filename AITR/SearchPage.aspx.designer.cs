@@ -40,6 +40,15 @@ namespace AITR {
         protected global::System.Web.UI.WebControls.Button logoutButton;
         
         /// <summary>
+        /// bankServiceCheckBoxList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList bankServiceCheckBoxList;
+        
+        /// <summary>
         /// SearchButton control.
         /// </summary>
         /// <remarks>
@@ -47,5 +56,14 @@ namespace AITR {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SearchButton;
+        
+        /// <summary>
+        /// tableBodySearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tableBodySearch;
     }
 }

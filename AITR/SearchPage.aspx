@@ -44,26 +44,42 @@
                     <asp:TextBox  runat="server" MaxLength="20"></asp:TextBox>
                 </p>
                 <p>
-                <strong>Banks</strong></p>
+                <strong>Bank Service</strong></p>
+                <p>
+                    <asp:CheckBoxList  runat="server" ID="bankServiceCheckBoxList">
+                        <asp:ListItem value="15">Internet Banking</asp:ListItem>
+                        <asp:ListItem value="16">Home Loan</asp:ListItem>
+                         <asp:ListItem value="17">Credit Card</asp:ListItem>
+                          <asp:ListItem value="18">Share Investment</asp:ListItem>
+                    </asp:CheckBoxList>
+                </p>
+                <p>
+                    <strong>Bank Used</strong></p>
                 <p>
                     <asp:CheckBoxList runat="server">
                     </asp:CheckBoxList>
                 </p>
                 <p>
-                    <strong>Bank Services Used</strong></p>
-                <p>
-                    <asp:CheckBoxList runat="server">
-                    </asp:CheckBoxList>
-                </p>
-                <p>
-                    <asp:Button ID="SearchButton" runat="server" Text="Search" />
+                    <asp:Button ID="SearchButton" runat="server" Text="Search" OnClick="SearchButton_Click" />
                 </p>
                 <p>
                     &nbsp;</p>
-                <p>
-                    <asp:GridView  runat="server">
-                    </asp:GridView>
-                </p>
+                <div class="col-6">
+                    <table class="table table-bordered" style="background-color:white;width:100%;">
+                        <thead>
+                            <tr>
+                                <th>Given Name</th>
+                                <th>Last Name</th>
+                                <th>Phone</th>
+                                <th>Age</th>
+                                <th>User IP Address</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBodySearch" runat="server">
+        
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <!-- Default form register -->
         </div>
