@@ -145,7 +145,9 @@ namespace AITR
             string currentUserIpAddress = GetIPAddress();
             List<Answer> answers = getListOfAnswersFromSession();
             User u = new User();
+            string anonymous = "Anonymous";
             u.UserIpAddress = currentUserIpAddress;
+            u.GivenName = anonymous;
 
             //setup connection
             using (SqlConnection connection = OpenSqlConnection())
@@ -287,7 +289,7 @@ namespace AITR
                         if (reader.IsDBNull(nextQuestionColumnIndex))
                         {
                             SqlCommand insertUserCommand;
-                            insertUserCommand = new SqlCommand("INSERT INTO [User](userIpAddress,surveyRecordDate) VALUES('" + u.UserIpAddress + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "');"+ " SELECT CAST(scope_identity() AS int);", connection);
+                            insertUserCommand = new SqlCommand("INSERT INTO [User](givenName,userIpAddress,surveyRecordDate) VALUES('" + u.GivenName + "','" + u.UserIpAddress + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "');"+ " SELECT CAST(scope_identity() AS int);", connection);
                             int ? userId = (int?)insertUserCommand.ExecuteScalar();
                             HttpContext.Current.Session["userId"] = userId;
                             //if NULL, must be end of survey, so navigate to the thank you page

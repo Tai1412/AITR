@@ -48,31 +48,58 @@ namespace AITR
 
         protected void SearchButton_Click(object sender, EventArgs e)
         {
-            List<int> selectedOptionIds = new List<int>();
+            List<int> optionIdSelected = new List<int>();
+            // list gender 
+            foreach (ListItem item in genderRadioButtonList.Items)
+            {
+                if (item.Selected)
+                {
+                    int convertedInt = Int32.Parse(item.Value.ToString());
+                    optionIdSelected.Add(convertedInt);
+                }
+            }
             // list banks services
             foreach (ListItem item in bankServiceCheckBoxList.Items)
             {
                 if (item.Selected)
                 {
                     int convertedInt = Int32.Parse(item.Value.ToString());
-                    selectedOptionIds.Add(convertedInt);
+                    optionIdSelected.Add(convertedInt);
                 }
             }
-                if (selectedOptionIds.Count > 0)
+            //list section of newspaper read
+            foreach (ListItem item in sectionRadioButtonList.Items)
+            {
+                if (item.Selected)
                 {
-                    string thisIds = String.Join(",", selectedOptionIds);
+                    int convertedInt = Int32.Parse(item.Value.ToString());
+                    optionIdSelected.Add(convertedInt);
+                }
+            }
+            //list travel
+            foreach (ListItem item in travelCheckBoxList.Items)
+            {
+                if (item.Selected)
+                {
+                    int convertedInt = Int32.Parse(item.Value.ToString());
+                    optionIdSelected.Add(convertedInt);
+                }
+            }
+            if (optionIdSelected.Count > 0)
+                {
+                    string thisIds = String.Join(",", optionIdSelected);
                     try
                     {
 
                         using (SqlConnection connection = OpenSqlConnection())
                         {
-                            //Create query to get all options relating to current question
+                            //Create query 
                             SqlCommand optionCommand = new SqlCommand("SELECT * FROM [User] WHERE userId IN(SELECT userId FROM SurveyAnswer WHERE optionId IN(" + thisIds + "))", connection);
-                            //run command and collect results in reader
+                            //collect result
                             SqlDataReader optionReader = optionCommand.ExecuteReader();
 
                             List<User> listUserSearch = new List<User>();
-                            //loop through results (Read 1 row at a time)
+                            //Read row
                             while (optionReader.Read())
                             {
                                 User user = new User();
@@ -88,31 +115,30 @@ namespace AITR
                             if (listUserSearch.Count > 0)
                             {
 
-                                tableBodySearch.Controls.Clear();
+                                tableBodySearch.Controls.Clear();//clear when it load the newone
                                 foreach (User user in listUserSearch)
                                 {
                                 tableBodySearch.Controls.Add(new LiteralControl("<tr>"));
-                                    string givenName = "Anomyous";
-                                    if (user.GivenName != "")
-                                    {
-                                        givenName = user.GivenName;
-                                    }
-                                tableBodySearch.Controls.Add(new LiteralControl("<td>" + givenName + "</td>"));
+                                tableBodySearch.Controls.Add(new LiteralControl("<td>" + user.GivenName + "</td>"));
                                 tableBodySearch.Controls.Add(new LiteralControl("<td>" + user.LastName + "</td>"));
                                 tableBodySearch.Controls.Add(new LiteralControl("<td>" + user.PhoneNumber + "</td>"));
                                 tableBodySearch.Controls.Add(new LiteralControl("<td>" + user.Age + "</td>"));
                                 tableBodySearch.Controls.Add(new LiteralControl("<td>" + user.UserIpAddress + "</td>"));
-                                tableBodySearch.Controls.Add(new LiteralControl("</tr>"));
+                                tableBodySearch.Controls.Add(new LiteralControl("</tr>"));//when 1 row retreive, the new data will retrieve new row.
                                 }
                             }
                         }
-
+                    warningTextBox.Text = "";
                     }
                     catch (Exception ex)
                     {
-
+                        Response.Write(ex.Message);
                     }
                 }
+            else
+            {
+                warningTextBox.Text = "You have to choose the option to search";
+            }
             }
         }
     }

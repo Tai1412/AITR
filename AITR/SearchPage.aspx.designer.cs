@@ -40,6 +40,15 @@ namespace AITR {
         protected global::System.Web.UI.WebControls.Button logoutButton;
         
         /// <summary>
+        /// genderRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList genderRadioButtonList;
+        
+        /// <summary>
         /// bankServiceCheckBoxList control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,24 @@ namespace AITR {
         protected global::System.Web.UI.WebControls.CheckBoxList bankServiceCheckBoxList;
         
         /// <summary>
+        /// sectionRadioButtonList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList sectionRadioButtonList;
+        
+        /// <summary>
+        /// travelCheckBoxList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList travelCheckBoxList;
+        
+        /// <summary>
         /// SearchButton control.
         /// </summary>
         /// <remarks>
@@ -56,6 +83,15 @@ namespace AITR {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SearchButton;
+        
+        /// <summary>
+        /// warningTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label warningTextBox;
         
         /// <summary>
         /// tableBodySearch control.

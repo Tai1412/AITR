@@ -35,16 +35,18 @@
                     Search criteria
 
                 </p>
-                <p>
-                    <strong>Last Name</strong>
-                    <asp:TextBox  runat="server" MaxLength="20"></asp:TextBox>
+                 <p>
+                <strong>Gender</strong>
                 </p>
                 <p>
-                    <strong>Given Name</strong>
-                    <asp:TextBox  runat="server" MaxLength="20"></asp:TextBox>
+                    <asp:RadioButtonList  runat="server" ID="genderRadioButtonList">
+                        <asp:ListItem value="1">Male</asp:ListItem>
+                        <asp:ListItem value="2">Female</asp:ListItem>
+                    </asp:RadioButtonList>
                 </p>
                 <p>
-                <strong>Bank Service</strong></p>
+                <strong>Bank Service</strong>
+                </p>
                 <p>
                     <asp:CheckBoxList  runat="server" ID="bankServiceCheckBoxList">
                         <asp:ListItem value="15">Internet Banking</asp:ListItem>
@@ -54,14 +56,31 @@
                     </asp:CheckBoxList>
                 </p>
                 <p>
-                    <strong>Bank Used</strong></p>
                 <p>
-                    <asp:CheckBoxList runat="server">
+                <strong>Section Of Newspaper User Read</strong>
+                </p>
+                <p>
+                    <asp:RadioButtonList  runat="server" ID="sectionRadioButtonList">
+                        <asp:ListItem value="21">Sport</asp:ListItem>
+                        <asp:ListItem value="22">Travel</asp:ListItem>
+                    </asp:RadioButtonList>
+                </p>
+                 <p>
+                <strong>Travel</strong>
+                </p>
+                <p>
+                    <asp:CheckBoxList  runat="server" ID="travelCheckBoxList">
+                        <asp:ListItem value="27">Australia</asp:ListItem>
+                        <asp:ListItem value="28">Pacific</asp:ListItem>
+                        <asp:ListItem value="29">Europe</asp:ListItem>
+                        <asp:ListItem value="30">Asia</asp:ListItem>
                     </asp:CheckBoxList>
                 </p>
                 <p>
+                <p>
                     <asp:Button ID="SearchButton" runat="server" Text="Search" OnClick="SearchButton_Click" />
                 </p>
+                <asp:Label ID="warningTextBox" runat="server" style="color:red"></asp:Label>
                 <p>
                     &nbsp;</p>
                 <div class="col-6">
