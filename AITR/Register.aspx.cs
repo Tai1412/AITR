@@ -33,7 +33,7 @@ namespace AITR
                         int rowsAffected = command.ExecuteNonQuery();
                         Response.Redirect("~/RegisterCompletePage");
                     }
-                    
+                    connection.Close();
                 }
                 catch (Exception ex)
                 {

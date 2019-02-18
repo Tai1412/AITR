@@ -127,8 +127,10 @@ namespace AITR
                                 tableBodySearch.Controls.Add(new LiteralControl("</tr>"));//when 1 row retreive, the new data will retrieve new row.
                                 }
                             }
-                        }
+                        connection.Close();
+                    }
                     warningTextBox.Text = "";
+
                     }
                     catch (Exception ex)
                     {
